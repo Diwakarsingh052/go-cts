@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"os"
 )
 
 type person struct {
@@ -42,6 +43,18 @@ func main() {
 		log.Fatalln(err)
 	}
 	fmt.Println(string(jsonData))
+	//err = os.WriteFile("test.json", jsonData, 0666)
+	f, err := os.OpenFile("test.json", os.O_CREATE|os.O_WRONLY, 0666)
+
+	if err != nil {
+		log.Fatalln(err)
+	}
+	defer f.Close()
+
+	_, err = f.Write(jsonData)
+	if err != nil {
+		log.Fatalln(err)
+	}
 	fmt.Println(users[0].Password)
 
 }
