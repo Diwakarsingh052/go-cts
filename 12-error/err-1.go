@@ -22,6 +22,8 @@ func fetchRecord(id int) (string, error) {
 
 func main() {
 	data, err := fetchRecord(100)
+	//var s string = err.Error() // convert err to string
+	//fmt.Println(s)
 	if err != nil {
 		log.Fatalln(err)
 	}
