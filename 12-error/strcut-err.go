@@ -73,6 +73,4 @@ func main() {
 	//Unwrap returns nil if the unwrap method is not implemented over the custom struct
 	fmt.Println(errors.Unwrap(err))
 
-	var err error
-
 }
