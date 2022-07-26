@@ -24,6 +24,6 @@ func main() {
 
 func hello() {
 	defer wg.Done()
-	time.Sleep(4 * time.Second)
+	time.Sleep(4 * time.Second) // to show latency only // not to be used in the prod code
 	fmt.Println("hello from the hello func")
 }
