@@ -10,7 +10,7 @@ const Json = "json data"
 
 func GetData() {
 	//Json = "any"
-	//http.StatusOK
+	//18-http.StatusOK
 	fmt.Println("my prod data is in postgres so use that")
 	fmt.Println("getting data from ", DB, Json)
 }

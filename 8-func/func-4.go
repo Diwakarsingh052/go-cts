@@ -14,7 +14,7 @@ func main() {
 
 	i(10, 30)
 	calc(i, "hello")
-	//http.HandleFunc()
+	//18-http.HandleFunc()
 
 }
 

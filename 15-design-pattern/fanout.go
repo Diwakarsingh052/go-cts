@@ -26,5 +26,5 @@ func main() {
 
 /*
 	for range url slice {
-	go func() {http.get}
+	go func() {18-http.get}
 */
