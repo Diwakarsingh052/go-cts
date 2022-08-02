@@ -1,0 +1,3 @@
+m -> model // this layer interact with the DB
+v -> views
+c -> controller // handlers // entry point of your app
