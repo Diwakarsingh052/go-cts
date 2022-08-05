@@ -9,15 +9,24 @@ import (
 func check(ctx context.Context, w http.ResponseWriter, r *http.Request) error {
 	//return web.NewRequestError(errors.New("faking the request err"), http.StatusBadRequest)
 	//return errors.New("some app specific error")
-	panic("some problem")
+
 	status := struct {
 		Status string //fields
 	}{
 		Status: "ok", //values
 	}
+	//claims, ok := ctx.Value(auth.Key).(auth.Claims)
+	//if !ok {
+	//	return errors.New("not found")
+	//}
+
 	return web.Respond(ctx, w, status, http.StatusOK)
+
+	//ctx := r.Context()
+	//model.SetUser(ctx,userStruct)
 	//w.Header().Set("Content-Type", "application/json")
-	//return json.NewEncoder(w).Encode(status) // convert status and write to client
+	//w.WriteHeader(statusCode)
+	// json.NewEncoder(w).Encode(status) // convert status and write to client
 
 }
 
