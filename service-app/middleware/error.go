@@ -13,6 +13,7 @@ func (m *Mid) Error(next web.HandlerFunc) web.HandlerFunc {
 		if !ok {
 			return errors.New("value not found in the context")
 		}
+		//running the next thing in the chain to capture errors if any
 		err := next(ctx, w, r)
 		if err != nil {
 			// Log the error.

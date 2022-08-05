@@ -27,6 +27,7 @@ type HandlerFunc func(ctx context.Context, w http.ResponseWriter, r *http.Reques
 
 func (a *App) HandleFunc(method string, path string, handler HandlerFunc) {
 
+	// h var will contain the actual request that we will pass later to the mux router for exec
 	h := func(w http.ResponseWriter, r *http.Request) {
 
 		v := Values{
@@ -44,7 +45,7 @@ func (a *App) HandleFunc(method string, path string, handler HandlerFunc) {
 			return
 		}
 	}
-
+	// mux router can accept the h var because the signature of h var matches to func(w http.ResponseWriter, r *http.Request)
 	a.Router.HandleFunc(path, h).Methods(method)
 
 }

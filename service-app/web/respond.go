@@ -18,6 +18,7 @@ func Respond(ctx context.Context, w http.ResponseWriter, data interface{}, statu
 	//jsonData, err := json.Marshal(data)
 	//w.Write(jsonData)
 
+	//setting the headers,status code and responding with the data
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(statusCode)
 	err := json.NewEncoder(w).Encode(data)

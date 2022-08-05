@@ -12,10 +12,12 @@ type Error struct {
 	Status int
 }
 
+// implementing the error interface
 func (err *Error) Error() string {
 	return err.Err.Error()
 }
 
+//NewRequestError is our trusted error // this func should be used to pass errors back to the client (postman/frontend)
 func NewRequestError(err error, status int) error {
 	return &Error{Err: err, Status: status}
 }
