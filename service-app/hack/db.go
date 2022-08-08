@@ -9,12 +9,13 @@ import (
 	"time"
 )
 
+//45944bf2-7965-4f8b-9487-2457a59ba2a7 // api key
 const (
-	host     = "localhost"
+	host     = "batyr.db.elephantsql.com"
 	port     = 5432
-	user     = "diwakar"
-	password = "root"
-	dbname   = "postgres"
+	user     = "jmuuqeva"
+	password = "yILvHcvbUFs7fUs31XWaFCylEorRC2LH"
+	dbname   = "jmuuqeva"
 )
 
 var db *sql.DB
