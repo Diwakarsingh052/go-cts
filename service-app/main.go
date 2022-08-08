@@ -24,6 +24,13 @@ func main() {
 func startApp(log *log.Logger) error {
 
 	// =========================================================================
+	// Start Database
+	//db, err := database.Open()
+	//if err != nil {
+	//	return fmt.Errorf("connecting to db %w", err)
+	//}
+
+	// =========================================================================
 	// Initialize authentication support
 	log.Println("main : Started : Initializing authentication support")
 
