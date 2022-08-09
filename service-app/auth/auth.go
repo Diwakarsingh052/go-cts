@@ -9,14 +9,33 @@ import (
 
 type ctxKey int
 
-// Key is used to store/retrieve a Claims value from a context.Context.
-const Key ctxKey = 1
-
 // Claims is our payload/data for out jwt token
 type Claims struct {
 	jwt.RegisteredClaims
 	Roles []string `json:"roles"`
 }
+
+const (
+	RoleAdmin = "ADMIN"
+	RoleUser  = "USER"
+)
+
+func (c Claims) HasRoles(roles ...string) bool {
+
+	for _, has := range c.Roles { // roles with the user
+		for _, want := range roles { // what roles  handler demand
+			if has == want {
+				return true
+			}
+		}
+	}
+
+	return false
+
+}
+
+// Key is used to store/retrieve a Claims value from a context.Context.
+const Key ctxKey = 1
 
 // Auth struct privateKey field would be used to verify and generate token
 type Auth struct {

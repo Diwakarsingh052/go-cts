@@ -1,7 +1,7 @@
 openssl genpkey -algorithm RSA -out private.pem -pkeyopt rsa_keygen_bits:2048
 openssl rsa -in private.pem -pubout -out pubkey.pem
 
-
+drop table table_name;
 
 CREATE TABLE users (
   id SERIAL,
@@ -13,3 +13,29 @@ CREATE TABLE users (
   date_updated TIMESTAMP
 
 );
+
+CREATE TABLE inventory (
+  id SERIAL,
+  user_id int,
+  item_name varchar(100),
+  quantity int,
+  date_created TIMESTAMP,
+  date_updated TIMESTAMP
+
+);
+
+//signup endpoint json
+{
+    "name" : "u5",
+    "email" : "u5@email.com",
+    "password" : "abc",
+    "roles" : ["USER"]
+
+}
+
+//add endpoint json
+
+{
+    "item_name" : "shirt",
+    "quantity" : 90
+}
