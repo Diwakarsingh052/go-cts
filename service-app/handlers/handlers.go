@@ -21,10 +21,11 @@ func API(log *log.Logger, A *auth.Auth, db *user.DbService) http.Handler {
 		DbService: db,
 		Auth:      A,
 	}
-	app.HandleFunc(http.MethodGet, "/check", m.Logger(m.Error(m.Panic(m.Authenticate(m.HasRole(check, auth.RoleAdmin))))))
+	//app.HandleFunc(http.MethodGet, "/check", m.Logger(m.Error(m.Panic(m.Authenticate(m.HasRole(check, auth.RoleAdmin))))))
+	app.HandleFunc(http.MethodGet, "/check", m.Logger(m.Error(m.Panic(m.AuthenticateCookie(m.HasRole(check, auth.RoleAdmin))))))
 	app.HandleFunc(http.MethodPost, "/create", m.Logger(m.Error(m.Panic(uh.SignUp))))
 	app.HandleFunc(http.MethodPost, "/login", m.Logger(m.Error(m.Panic(uh.Login))))
-	app.HandleFunc(http.MethodGet, "/add", m.Logger(m.Error(m.Panic(m.Authenticate(uh.AddInventory)))))
-	app.HandleFunc(http.MethodGet, "/view", m.Logger(m.Error(m.Panic(m.Authenticate(uh.ViewInventory)))))
+	app.HandleFunc(http.MethodGet, "/add", m.Logger(m.Error(m.Panic(m.AuthenticateCookie(uh.AddInventory)))))
+	app.HandleFunc(http.MethodGet, "/view", m.Logger(m.Error(m.Panic(m.AuthenticateCookie(uh.ViewInventory)))))
 	return app
 }

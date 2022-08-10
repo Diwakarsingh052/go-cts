@@ -1,9 +1,9 @@
 package main
 
 import (
+	_ "19-github.com/go-sql-driver/mysql" // sql.Open using it internally
 	"database/sql"
 	"fmt"
-	_ "github.com/go-sql-driver/mysql" // sql.Open using it internally
 	"log"
 )
 

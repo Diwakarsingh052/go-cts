@@ -36,8 +36,7 @@ func (h *userHandlers) AddInventory(ctx context.Context, w http.ResponseWriter, 
 		return web.NewRequestError(errors.New("problem in creating inventory"), http.StatusBadRequest)
 	}
 
-	web.Respond(ctx, w, s, http.StatusCreated)
-	return nil
+	return web.Respond(ctx, w, s, http.StatusCreated)
 
 }
 

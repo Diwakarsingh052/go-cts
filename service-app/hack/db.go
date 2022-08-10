@@ -1,12 +1,11 @@
 package main
 
 import (
+	_ "19-github.com/lib/pq"
 	"context"
 	"database/sql"
 	"fmt"
-	_ "github.com/lib/pq"
 	"log"
-	"time"
 )
 
 //45944bf2-7965-4f8b-9487-2457a59ba2a7 // api key
@@ -34,12 +33,12 @@ func main() {
 		log.Fatalln(err)
 	}
 
-	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
-	defer cancel()
-	//Insert(ctx)
-	//Insert2(ctx)
-	//querySingleRecords(ctx)
-	QueryMultipleRecords(ctx)
+	//ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
+	//defer cancel()
+	////Insert(ctx)
+	////Insert2(ctx)
+	////querySingleRecords(ctx)
+	//QueryMultipleRecords(ctx)
 }
 
 func Insert(ctx context.Context) {
