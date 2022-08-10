@@ -62,7 +62,7 @@ func createRepo(repo repoRequest) error {
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
 	req = req.WithContext(ctx)
-	//making the request to the github // Do method returns an error when an endpoint is not available or req times out
+	//making the request to the GitHub // Do method returns an error when an endpoint is not available or req times out
 	resp, err := http.DefaultClient.Do(req) // this is not going to tell whether error happened at github or not
 	if err != nil {
 		return err
