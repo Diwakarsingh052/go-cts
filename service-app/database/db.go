@@ -1,9 +1,9 @@
 package database
 
 import (
-	_ "19-github.com/lib/pq"
 	"database/sql"
 	"fmt"
+	_ "github.com/lib/pq"
 )
 
 const (

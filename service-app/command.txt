@@ -39,3 +39,9 @@ CREATE TABLE inventory (
     "item_name" : "shirt",
     "quantity" : 90
 }
+
+//create repo github from postman
+{
+    "name": "go-test11",
+    "description": "test repo"
+}
